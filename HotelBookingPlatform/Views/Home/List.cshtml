@@ -1,0 +1,58 @@
+﻿@model IEnumerable<HotelBookingPlatform.Models.Room>
+
+@{
+    ViewData["Title"] = "List";
+
+}
+
+<h1>List</h1>
+
+<div class="junior-container">
+    <div class="leftside">
+        <div id="favourites">
+            <h3>Favourites</h3>
+            <p>Hilton hotel</p>
+        </div>
+        <div id="reviews">
+            <h5>Reviews</h5>
+            <p>nice</p>
+        </div>
+    </div>
+    <div class="rightside">
+        <div class="booking-header">
+            <h3>My bookings</h3>
+        </div>
+        <ul>
+            @foreach (var room in Model)
+            {
+                <li>
+                    @(room.RoomId) - @(room.Name)/@(room.RoomType) - @(room.City)
+
+                    <div class="room-description">
+
+                        <div class="featured-img"><img src="@(room.Photo)"></div>
+                        <div class="room-dets">
+
+                            <h3>@(room.Name)</h3>
+                            <h5>@(room.City), @(room.Area)</h5>
+                            <p>@(room.ShortDescription)</p>
+                        </div>
+                    </div>
+                    <div style="text-align:right"><input type="submit" id="booking-button" value="Go to room page" /></div>
+                    <div id="booking-footer">
+                        <div id="cost">
+                            @(room.Price)
+                        </div>
+                        <div id="booking-details">
+                            <div>@(room.RoomType)</div>
+                            <div>Check-in date: 20-1-20</div>
+                            <div>Check-out date: 21-1-20</div>
+
+                        </div>
+                    </div>
+
+                </li>
+            }
+        </ul>
+    </div>
+</div>

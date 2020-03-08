@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+@model HotelBookingPlatform.Models.SearchFiltersModel
+
+
+<div class="container-form">
+    <form id="room-search" method="get" asp-action="List">
+        <fieldset>
+            <div class="upper">
+                <select id="city" name="city">
+
+                    @foreach (var item in Model.Cities)
+                    {
+                        <option value="@item">@item</option>
+                    }
+                </select>
+
+                <select id="room-type" name="room-type">
+                    @foreach (var item in Model.RoomTypes)
+                    {
+                        <option value="@(item.Item1)">@(item.Item2)</option>
+                    }
+                </select>
+            </div>
+            <div class="lower">
+                <input type="date" id="check-in" />
+
+                <input type="date" id="check-out" />
+            </div>
+
+            <div style="text-align:center">
+                <input type="submit" class="search-button" id="search-button" value="Submit" />
+            </div>
+        </fieldset>
+    </form>
+</div>
+

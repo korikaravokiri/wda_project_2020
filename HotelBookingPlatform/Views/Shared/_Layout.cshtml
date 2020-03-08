@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HotelBookingPlatform</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+
+
+        <nav>
+            <ul>
+                <li>
+                    <a asp-controller="Home" asp-action="List">&nbsp;Hotels</a>
+                </li>
+
+                <li>
+                    <a asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i>&nbsp;Home</a>
+                </li>
+                <li>
+                    <a asp-controller="Home" asp-action="Profile"><i class="fas fa-user"></i>&nbsp;Profile</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        
+            &copy; 2020 - HotelBookingPlatform - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+     
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
